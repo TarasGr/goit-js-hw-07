@@ -15,7 +15,7 @@ const ref = {
 ref.validationInput.addEventListener('change', checkName);
 
 function checkName(event) {
-    event.target.dataset.length > event.target.textLength ? setInvalidColor(event.target) : setValidColor(event.target);
+    Number(event.target.dataset.length) === event.target.value.length ? setValidColor(event.target) : setInvalidColor(event.target);
 }
 function setValidColor(target) {
     target.classList.remove('invalid');

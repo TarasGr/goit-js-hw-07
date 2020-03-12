@@ -24,8 +24,10 @@ ref.renderBtn.addEventListener('click', getNumber);
 ref.destroyBtn.addEventListener('click', destroyBoxes);
 
 function random_rgba() {
-    var o = Math.round, r = Math.random, s = 255;
-    return 'rgba(' + o(r() * s) + ',' + o(r() * s) + ',' + o(r() * s) + ')';
+    const r = Math.floor(Math.random() * 256),
+        g = Math.floor(Math.random() * 256),
+        b = Math.floor(Math.random() * 256);
+    return `rgb(${r}, ${g}, ${b})`;
 }
 function getNumber() {
     const amount = ref.numbers.value;
